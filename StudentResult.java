@@ -7,7 +7,7 @@ class Student {
     String name;
     int rollNumber;
     int semester;
-    int[] marks = new int[5]; // Assuming 5 subjects
+    int[] marks = new int[5];
 
     public Student(String name, int rollNumber, int semester, int[] marks) {
         this.name = name;
@@ -22,7 +22,7 @@ public class StudentResult {
     public static void main(String[] args) {
         HashMap<Integer, Student> students = new HashMap<>();
 
-        // Read input from file and populate students HashMap
+        
         try {
             BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\jithe\\eclipse-workspace\\StudentResultProcessor\\src\\SRP\\input.txt"));
             String line;
@@ -40,10 +40,10 @@ public class StudentResult {
             reader.close();
         } catch (IOException e) {
             e.printStackTrace();
-            return; // Exit the program if file reading fails
+            return; 
         }
 
-        // Check for pass or fail and write to output file
+        
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\jithe\\eclipse-workspace\\StudentResultProcessor\\src\\SRP\\output.txt"));
             for (Map.Entry<Integer, Student> entry : students.entrySet()) {
@@ -67,7 +67,7 @@ public class StudentResult {
             e.printStackTrace();
         }
 
-        // Check result for specific roll number if provided
+        
         if (args.length == 1) {
             int rollNumberToCheck = Integer.parseInt(args[0]);
             Student student = students.get(rollNumberToCheck);
